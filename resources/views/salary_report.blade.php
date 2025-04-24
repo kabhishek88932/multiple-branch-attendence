@@ -9,7 +9,6 @@
 <body>
 <div class="container mt-5">
 
-    {{-- Flash Messages --}}
     @if(session('success'))
         <div class="alert alert-success alert-dismissible fade show">
             {{ session('success') }}
@@ -19,7 +18,6 @@
 
     <h2 class="mb-4">Salary Report</h2>
 
-    {{-- Filter Form --}}
     <form method="GET" action="{{ route('salary.report') }}" class="form-inline mb-4">
         <div class="form-group mr-2">
             <label for="branch_id" class="mr-1">Branch</label>
@@ -53,7 +51,7 @@
         <button type="submit" class="btn btn-primary">Filter</button>
     </form>
 
-    {{-- Salary Table --}}
+   
     <table class="table table-bordered table-striped">
         <thead class="thead-dark">
             <tr>
@@ -91,7 +89,7 @@
         </tbody>
     </table>
 
-    {{-- Pagination --}}
+ 
     <div class="d-flex justify-content-center">
     {{ $salaries->links('pagination::bootstrap-4') }}
   </div>
